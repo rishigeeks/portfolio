@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Sun, Moon, FileText, CheckSquare, Menu, X, Code2, Sparkles } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
-export default function Navbar({ activeTheme, toggleTheme, openResumeModal, openChecklistModal }) {
+export default function Navbar({ activeTheme, toggleTheme, openResumeModal }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -62,16 +62,6 @@ export default function Navbar({ activeTheme, toggleTheme, openResumeModal, open
         {/* Actions & Buttons */}
         <div className="hidden lg:flex items-center gap-3">
           
-          {/* Placement Verification Checklist Button */}
-          <button
-            onClick={openChecklistModal}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 rounded-lg hover:bg-emerald-100 dark:hover:bg-emerald-900/50 transition-colors"
-            title="PES 390 Placement Verification Checklist"
-          >
-            <CheckSquare className="w-3.5 h-3.5" />
-            <span>PES Verification</span>
-          </button>
-
           {/* Download Resume Button */}
           <button
             onClick={openResumeModal}
@@ -134,13 +124,6 @@ export default function Navbar({ activeTheme, toggleTheme, openResumeModal, open
             >
               <FileText className="w-4 h-4" />
               View / Download Resume
-            </button>
-            <button
-              onClick={() => { setMobileMenuOpen(false); openChecklistModal(); }}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-lg"
-            >
-              <CheckSquare className="w-4 h-4" />
-              PES Placement Self-Checklist
             </button>
           </div>
         </div>

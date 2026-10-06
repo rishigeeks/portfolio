@@ -3,7 +3,7 @@ import { ArrowUp, Mail, CheckCircle2 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 import { personalInfo } from '../data/portfolioData';
 
-export default function Footer({ openChecklistModal }) {
+export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -21,22 +21,13 @@ export default function Footer({ openChecklistModal }) {
             </div>
             <div>
               <div className="font-bold text-slate-900 dark:text-white text-sm">
-                {personalInfo.name} Digital Portfolio
+                {personalInfo.name} — Portfolio
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400">
-                PES 390 Placement-Ready Online Portfolio · LPU CSE
+                Full-Stack & AI Systems Developer · LPU CSE
               </p>
             </div>
           </div>
-
-          {/* Verification Badge */}
-          <button
-            onClick={openChecklistModal}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:bg-emerald-100 transition-colors"
-          >
-            <CheckCircle2 className="w-4 h-4" />
-            <span>PES 390 Placement Criteria Verified</span>
-          </button>
 
           {/* Back to top */}
           <button

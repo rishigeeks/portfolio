@@ -9,7 +9,6 @@ import EducationCertifications from './components/EducationCertifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ResumeModal from './components/ResumeModal';
-import ChecklistModal from './components/ChecklistModal';
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -17,7 +16,6 @@ export default function App() {
   });
 
   const [isResumeOpen, setIsResumeOpen] = useState(false);
-  const [isChecklistOpen, setIsChecklistOpen] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -41,7 +39,6 @@ export default function App() {
         activeTheme={theme}
         toggleTheme={toggleTheme}
         openResumeModal={() => setIsResumeOpen(true)}
-        openChecklistModal={() => setIsChecklistOpen(true)}
       />
 
       {/* Main Content Area */}
@@ -56,17 +53,12 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer openChecklistModal={() => setIsChecklistOpen(true)} />
+      <Footer />
 
       {/* Modals */}
       <ResumeModal
         isOpen={isResumeOpen}
         onClose={() => setIsResumeOpen(false)}
-      />
-
-      <ChecklistModal
-        isOpen={isChecklistOpen}
-        onClose={() => setIsChecklistOpen(false)}
       />
 
     </div>
